@@ -1,0 +1,19 @@
+<div class="flex mx-auto p-2 pb-1 border rounded-full border-(--color-dark-blue) shadow-xl">
+    <div class="flex items-center">
+        <button class="cursor-pointer" type="button">
+            <mat-icon class="icon-size dark-blue-icon">add</mat-icon>
+        </button>
+    </div>
+    <textarea #area [value]="content" rows="1" class="w-[40em] outline-0 resize-none text-[1em]"
+        (keyup.enter)="sendContent(area)" (input)="onInput($event)" [disabled]="isDisabled"></textarea>
+    <div class="flex items-center">
+        <button class="cursor-pointer" type="button" (click)="sendContent(area)" [disabled]="isDisabled">
+            <mat-icon class="icon-size dark-blue-icon">send</mat-icon>
+        </button>
+    </div>
+    <!-- <div class="flex items-center">
+        <button class="cursor-pointer" type="button">
+            <mat-icon class="icon-size dark-blue-icon">mic</mat-icon>
+        </button>
+    </div> -->
+</div>
