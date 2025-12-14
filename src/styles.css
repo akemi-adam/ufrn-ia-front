@@ -1,1 +1,97 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --color-dark-blue: #164194;
+  --color-light-blue: #0095db;
+  --color-super-light-blue: #d9effa;
+}
+
+.logo-font {
+  font-family: var(--font-inter);
+  font-style: normal;
+  font-weight: 900;
+  background: linear-gradient(
+    90deg,
+    var(--color-dark-blue) 6.73%,
+    var(--color-light-blue) 53.85%,
+    var(--color-dark-blue) 65.87%,
+    var(--color-light-blue) 82.69%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.white-icon {
+  color: white;
+}
+
+.dark-blue-icon {
+  color: var(--color-dark-blue);
+}
+
+.icon-size {
+  font-size: 2em !important;
+  width: 2em !important;
+  height: 1em !important;
+}
+
+/* Remove setas */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Define o tamanho da scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* ou o tamanho que quiser */
+  height: 6px;
+}
+
+/* Remove o fundo (track) */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Apenas a barrinha (thumb) aparece */
+::-webkit-scrollbar-thumb {
+  background-color: #9ca3af; /* cinza (pode trocar) */
+  border-radius: 9999px;
+}
+
+/* Hover opcional */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}
+
+.chat-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #9ca3af transparent; /* thumb | background */
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

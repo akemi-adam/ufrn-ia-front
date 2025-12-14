@@ -1,0 +1,52 @@
+<div class="min-h-screen flex">
+    <div class="w-64 bg-[var(--color-dark-blue)] flex flex-col py-6 justify-between">
+        <div class="flex flex-col gap-y-8 mx-2">
+            <div class="flex flex-col gap-y-4">
+                <div class="flex justify-between items-center">
+                    <button type="button" class="cursor-pointer">
+                        <mat-icon class="white-icon icon-size">menu</mat-icon>
+                    </button>
+                    <div>
+                        <app-white-logo-icon />
+                    </div>
+                </div>
+                <button class="m-0 cursor-pointer" [routerLink]="'/chats'">
+                    <div class="flex gap-x-4">
+                        <div >
+                            <mat-icon class="white-icon icon-size">edit_square</mat-icon>
+                        </div>
+                        <h3 class="text-white text-xl">
+                            Novo Chat
+                        </h3>
+                    </div>
+                </button>
+            </div>
+            <div class="flex flex-col gap-y-4">
+                <div>
+                    <h3 class="text-white text-xl">Chats</h3>
+                </div>
+                <div class="h-96 chat-scroll overflow-auto flex flex-col gap-y-3">
+                    @for (chat of chats(); track chat.id) {                    
+                        <div class="flex flex-col gap-y-2">
+                            <!-- Temporário -->
+                             <a routerLink="/chats/{{ chat.id }}" class="text-white hover:underline truncate">{{ chat.title }}</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="m-0">
+                <div class="flex gap-x-4">
+                    <div>
+                        <mat-icon class="white-icon icon-size">settings</mat-icon>
+                    </div>
+                    <h3 class="text-white text-xl">
+                        Configurações
+                    </h3>
+                </div>
+            </button>
+        </div>
+    </div>
+    <div class="w-3 bg-[var(--color-light-blue)]"></div>
+</div>

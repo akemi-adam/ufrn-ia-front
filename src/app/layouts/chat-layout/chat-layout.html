@@ -1,0 +1,25 @@
+<div class="flex h-screen">
+    <app-side-bar></app-side-bar>
+    <div class="flex flex-col gap-y-12 pt-8 w-full">
+        <div class="flex justify-between mx-4">
+            <div class="flex gap-x-2">
+                <div>
+                    <span class="logo-font text-3xl">ChatUFRN</span>
+                </div>
+                <div>
+                    <!-- Ícone do projeto aqui -->
+                </div>
+            </div>
+            <div>
+                <mat-icon class="icon-size dark-blue-icon">account_circle</mat-icon>
+                <button (click)="logout()">Logout temporário</button>
+            </div>
+        </div>
+        <div class="flex-1 overflow-hidden">
+            <div class="mt-10"></div>
+            <!-- <ng-content select="[main]"></ng-content> -->
+            <router-outlet />
+        </div>
+    </div>
+</div>
+
