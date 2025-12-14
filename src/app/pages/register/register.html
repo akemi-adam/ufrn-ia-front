@@ -1,0 +1,24 @@
+<form [formGroup]="form" class="flex flex-col gap-y-4" (ngSubmit)="submit()">
+    <div class="pb-4 border-b-2 border-b-gray-400">
+        <h3 class="logo-font uppercase text-3xl text-center">Autenticação</h3>
+    </div>
+    @if (form.errors?.['passwordMismatch']) {
+        <span class="text-red-500 text-sm">As senhas não coincidem.</span>
+    }
+    <app-form-input labelText="Nome de Usuário" inputPlaceholder="Insira seu nome" [error]="getErrorMessage('name')"
+        inputName="name" formControlName="name" />
+    <app-form-input labelText="Email" inputType="email" inputPlaceholder="Insira seu email"
+        [error]="getErrorMessage('email')" inputName="email" formControlName="email" />
+    <app-form-input labelText="Senha" inputType="password" inputPlaceholder="Insira sua senha"
+        [error]="getErrorMessage('password')" inputName="password" formControlName="password" />
+    <app-form-input labelText="Confirme a senha" inputType="password" inputPlaceholder="Confirme sua senha"
+        [error]="getErrorMessage('confirmPassword')" inputName="confirmPassword" formControlName="confirmPassword" />
+    <div class="w-full">
+        <app-button type="submit" label="Cadastrar" extraClasses="mx-auto px-6 py-2 shadow-lg shadow-gray-400" />
+    </div>
+    <div class="text-center">
+        <a routerLink="/auth/login" class="text-(--color-dark-blue) hover:underline">
+            Já possui uma conta? Faça login
+        </a>
+    </div>
+</form>
